@@ -1,0 +1,26 @@
+# Local-only Postgres + pgvector for NovaDesk AI.
+# This is NOT a deployment config — it only stands up the database
+# so the backend can run against a real Postgres instance on localhost.
+version: "3.9"
+
+services:
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: novadesk-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: novadesk
+      POSTGRES_PASSWORD: novadesk_local_pw
+      POSTGRES_DB: novadesk
+    ports:
+      - "5433:5432"
+    volumes:
+      - novadesk_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U novadesk -d novadesk"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  novadesk_pg_data:

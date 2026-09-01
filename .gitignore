@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.next/
+*.log
+.DS_Store
+.env
+.env.local
+backend/uploads/*
+!backend/uploads/.gitkeep
+portfolio-thumbnail.png
+portfolio-thumbnail@2x.png
+
