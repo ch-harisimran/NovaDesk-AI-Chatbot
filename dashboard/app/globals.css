@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FAFAFA;
+  --fg: #17171C;
+}
+
+.dark {
+  --bg: #0A0A0F;
+  --fg: #F4F4F6;
+}
+
+* {
+  border-color: rgba(127, 127, 140, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.55);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.dark .glass {
+  background: rgba(255, 255, 255, 0.03);
+}
+.light .glass,
+:root:not(.dark) .glass {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.shimmer-bg {
+  background-color: rgba(127, 127, 140, 0.08);
+  background-image: linear-gradient(
+    90deg,
+    rgba(127, 127, 140, 0) 0px,
+    rgba(139, 92, 246, 0.18) 120px,
+    rgba(127, 127, 140, 0) 240px
+  );
+  background-repeat: no-repeat;
+  background-size: 1000px 100%;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
