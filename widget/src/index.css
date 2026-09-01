@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Geist";
+  src: local("Geist");
+  font-display: swap;
+}
+
+html, body, #root {
+  height: 100%;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.35); border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
